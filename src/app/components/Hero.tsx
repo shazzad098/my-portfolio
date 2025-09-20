@@ -1,4 +1,3 @@
-// src/app/components/Hero.tsx
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -11,6 +10,7 @@ import {
   FiMail,
 } from "react-icons/fi";
 import Image from "next/image";
+import { SiReact, SiNextdotjs, SiJavascript } from "react-icons/si";
 
 export default function Hero() {
   const [isMounted, setIsMounted] = useState(false);
@@ -53,15 +53,6 @@ export default function Hero() {
     },
   };
 
-  const floatingAnimation = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
   return (
     <section
       id="home"
@@ -95,7 +86,7 @@ export default function Hero() {
           variants={textVariants}
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
         >
-          <span className="text-gray-800 dark:text-white">Hi, I'm </span>
+          <span className="text-gray-800 dark:text-white">Hi, I&apos;m </span>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
             Shazzad Haque Prince
           </span>
@@ -169,12 +160,23 @@ export default function Hero() {
         animate={isMounted ? "visible" : "hidden"}
         className="md:w-1/2 relative flex justify-center items-center"
       >
-        <motion.div animate={floatingAnimation} className="relative">
+        <motion.div 
+          animate={{
+            y: [0, -15, 0],
+            transition: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }} 
+          className="relative"
+        >
           <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
             <Image
               src="/images/profile.jpg"
               alt="Shazzad Haque Prince"
               fill
+              sizes="(max-width: 768px) 20rem, 24rem"
               className="object-cover"
               priority
             />
@@ -252,6 +254,3 @@ export default function Hero() {
     </section>
   );
 }
-
-// Import additional icons (add to your existing imports)
-import { SiReact, SiNextdotjs, SiJavascript } from "react-icons/si";

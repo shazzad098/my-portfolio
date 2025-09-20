@@ -23,7 +23,7 @@ export default function About() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -36,7 +36,7 @@ export default function About() {
       rotate: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -76,6 +76,7 @@ export default function About() {
                   src="/images/profile1.jpg"
                   alt="Shazzad Haque Prince"
                   fill
+                  sizes="16rem" // because the container is w-64 (16rem) at all breakpoints
                   className="object-cover"
                 />
               </div>
@@ -190,7 +191,7 @@ export default function About() {
                 href="#contact"
                 className="px-6 py-3 bg-white dark:bg-slate-800 text-gray-800 dark:text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-gray-700"
               >
-                Let's Talk
+                Let&apos;s Talk
               </a>
             </motion.div>
           </motion.div>

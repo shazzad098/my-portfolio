@@ -59,7 +59,7 @@ const Navbar = () => {
               alt="SHPrince Logo"
               width={40}
               height={40}
-              className="h-10 w-auto"
+              className="h-10 w-auto" // Changed to maintain aspect ratio
               priority
             />
           </Link>

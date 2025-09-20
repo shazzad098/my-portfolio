@@ -1,26 +1,38 @@
 // src/app/layout.tsx
 
 import './globals.css';
-import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Metadata } from 'next';
+import { Plus_Jakarta_Sans, Outfit, Space_Grotesk } from 'next/font/google';
 import { ThemeProvider } from './components/ThemeProvider';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
 
-const inter = Inter({
+
+// Modern sans-serif font for body text - Plus Jakarta Sans
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-plus-jakarta-sans',
+  display: 'swap',
 });
 
-const roboto = Roboto({
+// Modern geometric font for headings - Outfit
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-roboto',
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+// Techy, modern font for accents - Space Grotesk
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Shazzad - Personal Portfolio',
-  description: 'A portfolio showcasing my skills and projects.',
+  title: 'Shazzad - Web Developer Portfolio',
+  description: 'Modern portfolio showcasing innovative web development projects and skills',
 };
 
 export default function RootLayout({
@@ -29,17 +41,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${roboto.variable} font-sans`}>
-        {/* Background Animation Div */}
+  <html lang="en" className={`${plusJakartaSans.variable} ${outfit.variable} ${spaceGrotesk.variable}`}>
+    <body className="font-sans">
+      <ErrorBoundary>
         <div className="tech-background"></div>
-        
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-      </body>
-    </html>
-  );
+      </ErrorBoundary>
+    </body>
+  </html>
+);
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion,easeInOut  } from "framer-motion";
 import { useState } from "react";
 import {
   FiSend,
@@ -25,17 +25,17 @@ export default function Contact() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: easeInOut
+    }
+  }
+};
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -108,7 +108,7 @@ export default function Contact() {
               className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white"
               variants={itemVariants}
             >
-              Let's Connect
+              Let&apos;s Connect
             </motion.h3>
 
             <motion.p
