@@ -3,8 +3,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Roboto } from 'next/font/google';
-
-// Path গুলো ../ থেকে ./ তে পরিবর্তন করা হয়েছে
 import { ThemeProvider } from './components/ThemeProvider';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -33,6 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${roboto.variable} font-sans`}>
+        {/* Background Animation Div */}
+        <div className="tech-background"></div>
+        
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main>{children}</main>

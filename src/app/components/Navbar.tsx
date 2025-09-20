@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,11 +53,15 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link 
-            href="/" 
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
-          >
-            SHPrince
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.jpg"
+              alt="SHPrince Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
         </motion.div>
 

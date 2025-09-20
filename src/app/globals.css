@@ -17,3 +17,219 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+/* Minimalist Tech Background Animation */
+.tech-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Grid pattern */
+.tech-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-move 20s linear infinite;
+}
+
+/* Animated dots/particles */
+.tech-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(2px 2px at 20% 30%, rgba(59, 130, 246, 0.3), transparent 50%),
+    radial-gradient(2px 2px at 80% 70%, rgba(6, 182, 212, 0.3), transparent 50%),
+    radial-gradient(2px 2px at 40% 80%, rgba(59, 130, 246, 0.3), transparent 50%),
+    radial-gradient(2px 2px at 60% 10%, rgba(6, 182, 212, 0.3), transparent 50%),
+    radial-gradient(2px 2px at 30% 50%, rgba(59, 130, 246, 0.3), transparent 50%),
+    radial-gradient(2px 2px at 70% 20%, rgba(6, 182, 212, 0.3), transparent 50%);
+  animation: particles-move 15s linear infinite;
+}
+
+/* Grid animation */
+@keyframes grid-move {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(40px) translateX(40px);
+  }
+}
+
+/* Particles animation */
+@keyframes particles-move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .tech-background::before {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  }
+  
+  .tech-background::after {
+    background: 
+      radial-gradient(2px 2px at 20% 30%, rgba(59, 130, 246, 0.2), transparent 50%),
+      radial-gradient(2px 2px at 80% 70%, rgba(6, 182, 212, 0.2), transparent 50%),
+      radial-gradient(2px 2px at 40% 80%, rgba(59, 130, 246, 0.2), transparent 50%),
+      radial-gradient(2px 2px at 60% 10%, rgba(6, 182, 212, 0.2), transparent 50%),
+      radial-gradient(2px 2px at 30% 50%, rgba(59, 130, 246, 0.2), transparent 50%),
+      radial-gradient(2px 2px at 70% 20%, rgba(6, 182, 212, 0.2), transparent 50%);
+  }
+}
+
+/* For reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .tech-background::before,
+  .tech-background::after {
+    animation: none;
+  }
+}
+
+/* Update your globals.css with these font styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-plus-jakarta-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-plus-jakarta-sans);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Special elements for techy vibe */
+.font-tech {
+  font-family: var(--font-space-grotesk);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Navigation */
+nav {
+  font-family: var(--font-outfit);
+  font-weight: 500;
+}
+
+/* Buttons and interactive elements */
+button, .btn {
+  font-family: var(--font-outfit);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Code and technical content */
+code, pre {
+  font-family: var(--font-space-grotesk);
+}
+
+/* Custom utility classes for specific font usage */
+.font-heading {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+}
+
+.font-body {
+  font-family: var(--font-plus-jakarta-sans);
+  font-weight: 400;
+}
+
+.font-accent {
+  font-family: var(--font-space-grotesk);
+  font-weight: 500;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, transform, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.3);
+}
