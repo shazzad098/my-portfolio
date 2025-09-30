@@ -11,7 +11,7 @@ const projects = [
     title: 'Portfolio Website',
     description: 'A modern, responsive portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Features dark mode, smooth animations, and a contact form.',
     image: '/images/project1.png',
-    liveUrl: '#', // Replace with your portfolio live URL
+    liveUrl: 'https://my-portfolio-alpha-five-45.vercel.app/',
     githubUrl: 'https://github.com/shazzad098/my-portfolio',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
   },
@@ -24,11 +24,11 @@ const projects = [
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe']
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    image: '/images/project3.png',
-    liveUrl: '#',
-    githubUrl: 'https://github.com/shazzad098/task-manager',
+    title: 'Ramadan Reminder',
+    description: 'A beautiful and interactive Ramadan countdown website, built using React JS, Tailwind CSS, and React Icons.',
+    image: '/images/ramadan_reminder.png',
+    liveUrl: 'https://ramandan-reminder.vercel.app/',
+    githubUrl: 'https://github.com/shazzad098/ramandan_reminder',
     technologies: ['React', 'Firebase', 'Material-UI', 'Redux']
   },
   {
