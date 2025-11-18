@@ -2,7 +2,6 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  // Correct the paths to include the 'src' directory
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,21 +11,21 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-roboto)', 'sans-serif'],
-        heading: ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-manrope)', 'sans-serif'],
       },
       colors: {
-        light: {
-          background: '#ffffff',
-          primary: '#3b82f6',
-          secondary: '#22d3ee',
-          text: '#1e293b',
-        },
         dark: {
-          background: '#0f172a',
-          primary: '#3b82f6',
-          secondary: '#22d3ee',
-          text: '#f1f5f9',
+          background: '#0A0A0A',
+          surface: '#1A1A1A',
+          text: '#FFFFFF',
+          accent: '#007AFF',
+        },
+        light: {
+          background: '#FFFFFF',
+          surface: '#F5F5F7',
+          text: '#1D1D1F',
+          accent: '#007AFF',
         },
       },
     },
