@@ -23,8 +23,8 @@ const config: Config = {
           text: '#1e293b',
         },
         dark: {
-          background: '#0f172a',
-          primary: '#3b82f6',
+          background: '#020617',
+          primary: '#6366f1',
           secondary: '#22d3ee',
           text: '#f1f5f9',
         },
